@@ -1,47 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Himanshu Gupta | DevOps Engineer</title>
-  <!-- ✅ Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Enable Tailwind dark mode toggle
+    tailwind.config = {
+      darkMode: 'class'
+    }
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 
   <!-- 🌟 Navbar -->
-  <header class="bg-white shadow-md fixed top-0 w-full z-50">
+  <header class="bg-white dark:bg-gray-800 shadow-md fixed top-0 w-full z-50">
     <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold">Himanshu Gupta</h1>
       <ul class="flex gap-6">
         <li><a href="#about" class="hover:text-blue-600">About</a></li>
         <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#experience" class="hover:text-blue-600">Experience</a></li>
         <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#certifications" class="hover:text-blue-600">Certifications</a></li>
         <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
       </ul>
+      <button onclick="toggleDarkMode()" class="ml-4 px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+        🌙
+      </button>
     </nav>
   </header>
 
   <!-- 🌟 Hero Section -->
-  <section class="h-screen flex flex-col justify-center items-center text-center" id="home">
-    <img src="assets/profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full shadow-lg mb-6">
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6" id="home">
+    <img src="assets/profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full shadow-lg mb-6 border-4 border-white">
     <h2 class="text-4xl font-bold">Hi, I’m Himanshu 👋</h2>
     <p class="mt-4 text-lg">DevOps Engineer | Cloud | Automation</p>
-    <a href="assets/resume.pdf" download class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg">📄 Download Resume</a>
+    <div class="mt-6 flex gap-4">
+      <a href="#projects" class="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow hover:bg-gray-200">View My Work</a>
+      <a href="assets/resume.pdf" download class="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow hover:bg-yellow-300">📄 Download Resume</a>
+    </div>
   </section>
 
   <!-- 🌟 About Section -->
-  <section id="about" class="py-20 px-10 bg-gray-100">
+  <section id="about" class="py-20 px-10 max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-6">About Me</h2>
-    <p class="max-w-3xl">
-      I’m a DevOps Engineer with 2.5 years of experience in automating deployments, managing cloud infrastructure, and building scalable solutions using AWS, Azure, Kubernetes, Terraform, and CI/CD pipelines.
+    <p class="leading-relaxed text-lg">
+      I’m a DevOps Engineer with <strong>2.5 years of experience</strong> in automating deployments, managing cloud infrastructure, 
+      and building scalable solutions using AWS, Azure, Kubernetes, Terraform, and CI/CD pipelines. 
+      I thrive on optimizing systems, reducing costs, and ensuring high availability for mission-critical applications.
     </p>
   </section>
 
   <!-- 🌟 Skills Section -->
-  <section id="skills" class="py-20 px-10">
+  <section id="skills" class="py-20 px-10 bg-gray-100 dark:bg-gray-800">
     <h2 class="text-3xl font-bold mb-6">Skills</h2>
-    <ul class="grid grid-cols-2 md:grid-cols-3 gap-6">
+    <ul class="grid grid-cols-2 md:grid-cols-3 gap-6 text-lg">
       <li>☁️ AWS & Azure</li>
       <li>🐳 Docker & Kubernetes</li>
       <li>⚙️ Terraform, IaC</li>
@@ -51,30 +69,63 @@
     </ul>
   </section>
 
+  <!-- 🌟 Experience Section -->
+  <section id="experience" class="py-20 px-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10">Experience</h2>
+    <div class="relative border-l-4 border-blue-600 pl-6">
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold">DevOps Engineer – Healthcare Company</h3>
+        <span class="text-gray-500">Feb 2023 – Present</span>
+        <p class="mt-2">Automated deployments, managed Kubernetes clusters, implemented monitoring with Prometheus, and optimized infrastructure cost by 20%.</p>
+      </div>
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold">Cloud Engineer – IoTfy</h3>
+        <span class="text-gray-500">2021 – 2023</span>
+        <p class="mt-2">Worked on AWS & Azure infrastructure, built CI/CD pipelines with Jenkins, and deployed microservices with Docker & Kubernetes.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- 🌟 Projects Section -->
-  <section id="projects" class="py-20 px-10 bg-gray-100">
+  <section id="projects" class="py-20 px-10 bg-gray-100 dark:bg-gray-800">
     <h2 class="text-3xl font-bold mb-6">Projects</h2>
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Project Card -->
-      <div class="p-6 bg-white rounded-lg shadow-md">
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
         <img src="assets/project1.png" alt="Project 1" class="rounded-lg mb-4">
         <h3 class="text-xl font-semibold">CI/CD Pipeline with Jenkins</h3>
-        <p class="mt-2 text-gray-700">Automated deployments of a Node.js app on AWS EC2 with Jenkins pipelines and Docker.</p>
+        <p class="mt-2 text-gray-700 dark:text-gray-300">Automated deployments of a Node.js app on AWS EC2 with Jenkins pipelines and Docker.</p>
       </div>
       <!-- Project Card -->
-      <div class="p-6 bg-white rounded-lg shadow-md">
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+        <img src="assets/project2.png" alt="Project 2" class="rounded-lg mb-4">
         <h3 class="text-xl font-semibold">Kubernetes Deployment</h3>
-        <p class="mt-2 text-gray-700">Deployed microservices with Kubernetes & Helm, integrated monitoring with Prometheus + Grafana.</p>
+        <p class="mt-2 text-gray-700 dark:text-gray-300">Deployed microservices with Kubernetes & Helm, integrated monitoring with Prometheus + Grafana.</p>
       </div>
     </div>
+  </section>
+
+  <!-- 🌟 Certifications Section -->
+  <section id="certifications" class="py-20 px-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Certifications & Achievements</h2>
+    <ul class="list-disc pl-6 space-y-3 text-lg">
+      <li>AWS Certified Solutions Architect – Associate</li>
+      <li>Microsoft Certified: Azure Administrator</li>
+      <li>Certified Kubernetes Administrator (CKA)</li>
+    </ul>
   </section>
 
   <!-- 🌟 Contact Section -->
   <section id="contact" class="py-20 px-10 text-center">
     <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
-    <p>Email: <a href="mailto:himanshu@example.com" class="text-blue-600">himanshu@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" class="text-blue-600">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/yourgithub" class="text-blue-600">github.com/yourgithub</a></p>
+    <p class="mb-6">Feel free to reach out for opportunities, collaborations, or just a tech chat.</p>
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="max-w-lg mx-auto space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded border dark:bg-gray-800" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded border dark:bg-gray-800" required>
+      <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded border dark:bg-gray-800" rows="4" required></textarea>
+      <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg">Send Message</button>
+    </form>
   </section>
 
   <!-- 🌟 Footer -->
