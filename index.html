@@ -154,12 +154,31 @@
   <section id="contact" class="py-20 px-10 text-center">
     <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
     <p class="mb-6">Open to opportunities, collaborations, and knowledge-sharing. Let’s connect!</p>
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="max-w-lg mx-auto space-y-4">
-      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded border dark:bg-gray-800" required>
-      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded border dark:bg-gray-800" required>
-      <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded border dark:bg-gray-800" rows="4" required></textarea>
-      <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg">Send Message</button>
-    </form>
+    <form id="contactForm" class="max-w-lg mx-auto space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded border dark:bg-gray-800" required>
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded border dark:bg-gray-800" required>
+        <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded border dark:bg-gray-800" rows="4" required></textarea>
+        <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg">Send Message</button>
+      </form>
+      
+      <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+          const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            message: e.target.message.value
+          };
+      
+          fetch("YOUR_GOOGLE_SCRIPT_URL_HERE", {
+            method: "POST",
+            body: JSON.stringify(formData)
+          })
+          .then(res => res.json())
+          .then(data => alert("✅ Thank you! Your message has been submitted."))
+          .catch(err => alert("❌ Something went wrong. Please try again."));
+        });
+      </script>
   </section>
 
   <!-- 🌟 Footer -->
