@@ -1,10 +1,10 @@
 # 🌐 Himanshu Gupta – Portfolio Website  
 
-![GitHub Repo stars](https://img.shields.io/github/stars/HimanshuGupta08/portfolio-site?style=social)  
-![GitHub last commit](https://img.shields.io/github/last-commit/HimanshuGupta08/portfolio-site?color=blue&style=flat-square)  
-![GitHub issues](https://img.shields.io/github/issues/HimanshuGupta08/portfolio-site?color=red&style=flat-square)  
-![GitHub forks](https://img.shields.io/github/forks/HimanshuGupta08/portfolio-site?color=yellow&style=flat-square)  
-![License](https://img.shields.io/github/license/HimanshuGupta08/portfolio-site?color=green&style=flat-square)  
+![GitHub Repo stars](https://img.shields.io/github/stars/HimanshuGupta08/portfolio?style=social)  
+![GitHub last commit](https://img.shields.io/github/last-commit/HimanshuGupta08/portfolio?color=blue&style=flat-square)  
+![GitHub issues](https://img.shields.io/github/issues/HimanshuGupta08/portfolio?color=red&style=flat-square)  
+![GitHub forks](https://img.shields.io/github/forks/HimanshuGupta08/portfolio?color=yellow&style=flat-square)  
+![License](https://img.shields.io/github/license/HimanshuGupta08/portfolio?color=green&style=flat-square)  
 
 Welcome to my personal **DevOps Portfolio Website** 🚀  
 This site showcases my skills, projects, certifications, and experience in **Cloud & DevOps Engineering**.  
