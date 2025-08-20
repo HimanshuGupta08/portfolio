@@ -9,7 +9,7 @@
 Welcome to my personal **DevOps Portfolio Website** 🚀  
 This site showcases my skills, projects, certifications, and experience in **Cloud & DevOps Engineering**.  
 
-🔗 **Live Portfolio:** [Visit Here](https://himanshugupta08.github.io/portfolio-site/)  
+🔗 **Live Portfolio:** [Visit Here](https://himanshugupta08.github.io/portfolio/)  
 
 ---
 
@@ -51,8 +51,3 @@ I enjoy solving complex infrastructure problems, optimizing deployments, and men
 
 ## 🚀 Deployment
 This site is deployed using **GitHub Pages**.
-
-To run locally:
-```bash
-# Clone the repository
-git clone https://github.com/HimanshuGupta08/portfolio-site.git
