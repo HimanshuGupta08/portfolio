@@ -187,68 +187,125 @@
   <!-- Back to Top Button -->
   <button id="back-to-top" class="hidden fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-110 transition">⬆</button>
 
-  <!-- Scripts -->
-  <script>
-    // Dark Mode Toggle
-    const toggle = document.getElementById("theme-toggle");
-    toggle.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-    });
+ <!-- Scripts -->
+<script>
+  // Dark Mode Toggle with Persistence
+  const toggle = document.getElementById("theme-toggle");
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+  toggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      document.documentElement.classList.contains("dark") ? "dark" : "light"
+    );
+  });
 
-    // Hero Animation
-    window.addEventListener("load", () => {
+  // Hero Animation (staggered)
+  window.addEventListener("load", () => {
+    setTimeout(() => {
       document.getElementById("hero-img").classList.add("opacity-100", "translate-y-0");
+    }, 200);
+    setTimeout(() => {
       document.getElementById("hero-text").classList.add("opacity-100", "translate-y-0");
+    }, 400);
+    setTimeout(() => {
       document.getElementById("hero-subtext").classList.add("opacity-100", "translate-y-0");
-    });
+    }, 600);
+  });
 
-    // Back to Top
-    const backToTop = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("hidden", window.scrollY < 200);
-    });
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  // Back to Top with fade
+  const backToTop = document.getElementById("back-to-top");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.remove("hidden");
+      backToTop.classList.add("opacity-100");
+    } else {
+      backToTop.classList.add("hidden");
+      backToTop.classList.remove("opacity-100");
+    }
+  });
+  backToTop.addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  );
 
-    // Scrollspy Navbar
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(sec => {
-        const secTop = sec.offsetTop - 60;
-        if (pageYOffset >= secTop) current = sec.getAttribute("id");
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("text-blue-500", "font-bold");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("text-blue-500", "font-bold");
-        }
-      });
-    });
-
-    // Contact Form with Loading
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      status.textContent = "Sending...";
-      const formData = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-      };
-      try {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbx0AAsHvvZhWEirvUrdZ_ZIxjYGd2nNyGAZ5gNH7yHYI4r5bykX1ZV1JAfiT43Sue3X/exec", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData)
-        });
-        if (res.ok) status.textContent = "Message sent!";
-        else status.textContent = "Failed to send.";
-      } catch {
-        status.textContent = "Error sending message.";
+  // Scrollspy Navbar
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((sec) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 80 && rect.bottom >= 80) {
+        current = sec.getAttribute("id");
       }
     });
-  </script>
+    navLinks.forEach((link) => {
+      link.classList.remove("text-blue-500", "font-bold");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("text-blue-500", "font-bold");
+      }
+    });
+  });
+
+  // Mobile Navbar Auto-close (if you have a mobile menu)
+  const navMenu = document.getElementById("nav-menu");
+  navLinks.forEach((link) =>
+    link.addEventListener("click", () => {
+      if (navMenu) navMenu.classList.add("hidden");
+    })
+  );
+
+  // Contact Form with Loading + Reset
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    status.textContent = "Sending...";
+    status.className = "text-yellow-500";
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbx0AAsHvvZhWEirvUrdZ_ZIxjYGd2nNyGAZ5gNH7yHYI4r5bykX1ZV1JAfiT43Sue3X/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (res.ok) {
+        status.textContent = "Message sent!";
+        status.className = "text-green-500";
+        form.reset();
+      } else {
+        status.textContent = "Failed to send.";
+        status.className = "text-red-500";
+      }
+    } catch {
+      status.textContent = "Error sending message.";
+      status.className = "text-red-500";
+    }
+  });
+
+  // Scroll Reveal Animation (fade-up)
+  const revealElements = document.querySelectorAll("section");
+  const revealOnScroll = () => {
+    revealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+</script>
 </body>
 </html>
