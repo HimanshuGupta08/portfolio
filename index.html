@@ -188,7 +188,7 @@
   <button id="back-to-top" class="hidden fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-110 transition">⬆</button>
 
  <!-- Scripts -->
-<script>
+ <script>
   // Dark Mode Toggle with Persistence
   const toggle = document.getElementById("theme-toggle");
   if (localStorage.getItem("theme") === "dark") {
@@ -202,7 +202,7 @@
     );
   });
 
-  // Hero Animation (staggered)
+  // Hero Animation
   window.addEventListener("load", () => {
     setTimeout(() => {
       document.getElementById("hero-img").classList.add("opacity-100", "translate-y-0");
@@ -215,7 +215,7 @@
     }, 600);
   });
 
-  // Back to Top with fade
+  // Back to Top Button
   const backToTop = document.getElementById("back-to-top");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
@@ -249,17 +249,25 @@
     });
   });
 
-  // Mobile Navbar Auto-close (if you have a mobile menu)
-  const navMenu = document.getElementById("nav-menu");
-  navLinks.forEach((link) =>
-    link.addEventListener("click", () => {
-      if (navMenu) navMenu.classList.add("hidden");
-    })
-  );
+  // Scroll Reveal Animation
+  const revealElements = document.querySelectorAll("section");
+  const revealOnScroll = () => {
+    revealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
 
-  // Contact Form with Loading + Reset
+  // ==============================
+  // Contact Form Submission
+  // ==============================
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     status.textContent = "Sending...";
@@ -276,36 +284,27 @@
         "https://script.google.com/macros/s/AKfycbx0AAsHvvZhWEirvUrdZ_ZIxjYGd2nNyGAZ5gNH7yHYI4r5bykX1ZV1JAfiT43Sue3X/exec",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         }
       );
+
+      // Attempt to parse JSON safely
+      const data = await res.json().catch(() => ({}));
+
       if (res.ok) {
-        status.textContent = "Message sent!";
+        status.textContent = "✅ Message sent successfully!";
         status.className = "text-green-500";
         form.reset();
       } else {
-        status.textContent = "Failed to send.";
+        status.textContent = "❌ Failed to send message.";
         status.className = "text-red-500";
       }
-    } catch {
-      status.textContent = "Error sending message.";
+    } catch (err) {
+      status.textContent = "❌ Error sending message. Try again later.";
       status.className = "text-red-500";
+      console.error(err);
     }
   });
-
-  // Scroll Reveal Animation (fade-up)
-  const revealElements = document.querySelectorAll("section");
-  const revealOnScroll = () => {
-    revealElements.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add("opacity-100", "translate-y-0");
-      }
-    });
-  };
-  window.addEventListener("scroll", revealOnScroll);
-  window.addEventListener("load", revealOnScroll);
 </script>
 </body>
 </html>
