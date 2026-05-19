@@ -1,5 +1,7 @@
 # 🌐 Himanshu Gupta – Portfolio Website  
 
+<img width="1366" height="522" alt="image" src="https://github.com/user-attachments/assets/6dfe4ad4-e5a7-4a96-b817-cc6216027da4" />
+
 ![GitHub Repo stars](https://img.shields.io/github/stars/HimanshuGupta08/portfolio?style=social)  
 ![GitHub last commit](https://img.shields.io/github/last-commit/HimanshuGupta08/portfolio?color=blue&style=flat-square)  
 ![GitHub issues](https://img.shields.io/github/issues/HimanshuGupta08/portfolio?color=red&style=flat-square)  
