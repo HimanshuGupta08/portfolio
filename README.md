@@ -6,6 +6,7 @@
 ![License](https://img.shields.io/github/license/HimanshuGupta08/portfolio?color=green&style=flat-square)  
 
 Welcome to my **DevSecOps Engineering Portfolio** 🚀
+<img width="1366" height="531" alt="image" src="https://github.com/user-attachments/assets/812b4a9f-17e5-47fe-bbf6-763fbf85cb8a" />
 
 A modern, dark-themed portfolio website showcasing my expertise in **cloud infrastructure**, **CI/CD automation**, **security hardening**, and **multi-cloud deployments**.
 
