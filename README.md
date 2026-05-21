@@ -6,7 +6,6 @@
 ![License](https://img.shields.io/github/license/HimanshuGupta08/portfolio?color=green&style=flat-square)  
 
 Welcome to my **DevSecOps Engineering Portfolio** 🚀
-<img width="1366" height="531" alt="image" src="https://github.com/user-attachments/assets/812b4a9f-17e5-47fe-bbf6-763fbf85cb8a" />
 
 A modern, dark-themed portfolio website showcasing my expertise in **cloud infrastructure**, **CI/CD automation**, **security hardening**, and **multi-cloud deployments**.
 
@@ -31,8 +30,8 @@ I focus on eliminating toil, hardening pipelines, and building self-healing syst
 ## 🛠️ Tech Stack
 
 **Frontend:**
-- HTML5, CSS3 (custom, no frameworks)
-- Vanilla JavaScript (scroll animations, intersection observer)
+- HTML5, CSS3 (custom animations, 3D transforms)
+- Vanilla JavaScript (no frameworks, optimized for speed)
 - Responsive design (mobile-first)
 
 **Cloud & Infrastructure:**
@@ -69,15 +68,45 @@ I focus on eliminating toil, hardening pipelines, and building self-healing syst
 
 ---
 
+## ✨ Interactive 3D Features
+
+**Designed to Impress Decision-Makers:**
+
+### 🎨 Visual Effects
+- ✨ **Floating Profile Photo** – Smooth Y-axis animation (3s loop)
+- 🌟 **Shimmer Overlays** – Card sweep animation on skills & projects
+- 🎯 **3D Parallax Cards** – Skill & project cards respond to mouse movement with depth perspective
+- ⚡ **Live Counter Animation** – Stats animate from 0 to final number on scroll
+- 💫 **Glow Effects** – Dynamic shadow highlighting on interactions
+- 🎬 **Smooth Transitions** – Cubic-bezier easing for professional motion
+
+### 🖱️ Interactive Elements
+- **Tilt Effect** – Skill cards tilt in 3D space following mouse position
+- **Scale on Hover** – Cards lift up with shadow expansion on hover
+- **Button Ripple** – Water-like ripple effect on all buttons (CTAs)
+- **Stat Scaling** – Stats scale & rotate on mouse enter for emphasis
+- **Project 3D Rotation** – Project cards rotate on axes with parallax depth
+- **Shimmer Sweep** – Light sweep across cards on load & hover
+
+### 📊 Executive Metrics
+- Large, animated stat blocks (60%, 80%, 30%, 99.9%) catch attention
+- Numbered bullet points highlight quantified impact
+- Color-coded metrics (teal & blue alternating for visual interest)
+
+---
+
 ## ✨ Features
 
 ✅ **Dark Terminal Aesthetic** – Teal accent (#00d4aa) with professional color scheme  
 ✅ **Fully Responsive** – Desktop, tablet, mobile optimized  
-✅ **Smooth Animations** – Scroll-triggered fade-ins, hover effects  
-✅ **Fast Load** – No frameworks, vanilla JS, optimized CSS  
+✅ **Advanced 3D Animations** – Parallax tilt, floating effects, perspective transforms  
+✅ **Interactive Hover States** – Cards respond to mouse movement with 3D depth  
+✅ **Animated Counters** – Live stat animations trigger on scroll  
+✅ **Fast Load** – No frameworks, vanilla JS only (~50KB total)  
 ✅ **Accessibility** – Semantic HTML, proper contrast, keyboard navigation  
-✅ **Profile Picture** – High-resolution headshot with styled card  
+✅ **Profile Picture** – High-resolution headshot with floating animation  
 ✅ **Social Links** – LinkedIn, GitHub, email, phone  
+✅ **Executive-Friendly Design** – Large metrics, impact-focused messaging  
 
 ---
 
