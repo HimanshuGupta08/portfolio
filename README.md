@@ -15,7 +15,7 @@ A modern, dark-themed portfolio website showcasing my expertise in **cloud infra
 
 ## 👋 About Me
 
-**DevSecOps Engineer** with 3+ years architecting secure, scalable infrastructure across **AWS, Azure, GCP, and DigitalOcean**.
+**DevSecOps Engineer** with nearly 4 years architecting secure, scalable infrastructure across **AWS, Azure, GCP, and DigitalOcean**.
 
 **Key Metrics:**
 - ⚡ 60% faster deployments via CI/CD automation
